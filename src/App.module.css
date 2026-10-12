@@ -1,0 +1,52 @@
+.app {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
+
+.tour {
+  position: absolute;
+  left: 50%;
+  bottom: calc(var(--gap) * 1.5);
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.6rem 1.2rem;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  background: rgba(21, 27, 36, 0.92);
+  color: var(--text);
+  font-size: 0.9rem;
+  z-index: 20;
+  pointer-events: none;
+  animation: fade-in 0.3s;
+}
+
+:global(body:has([data-testid='panel'])) .tour {
+  left: calc((100% - var(--panel-w) - var(--gap)) / 2);
+}
+
+@media (max-width: 900px), (orientation: portrait) {
+  :global(body:has([data-testid='panel'])) .tour {
+    left: 50%;
+    top: calc(var(--gap) * 6);
+    bottom: auto;
+  }
+}
+
+.tourDot {
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 50%;
+  background: var(--accent);
+  animation: pulse 1.2s ease-in-out infinite;
+}
+
+.fatal {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 30;
+}
