@@ -1,0 +1,117 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem 1.75rem;
+}
+
+.grid h3 {
+  margin: 0 0 0.6rem;
+  font-size: 0.85rem;
+  color: var(--accent);
+  letter-spacing: 0.04em;
+}
+
+.field {
+  display: grid;
+  gap: 0.2rem;
+  margin-bottom: 0.6rem;
+  font-size: 0.8rem;
+  color: var(--text-dim);
+}
+
+.input {
+  min-height: 2.5rem;
+  padding: 0.35rem 0.6rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--mono);
+  font-size: 0.85rem;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.result {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  overflow-wrap: anywhere;
+}
+
+.block {
+  margin-bottom: 1rem;
+}
+
+.blockTitle {
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.check {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.5rem 0;
+  font-size: 0.85rem;
+}
+
+.check input {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.progress {
+  height: 0.4rem;
+  margin-top: 0.6rem;
+  border-radius: 999px;
+  background: var(--surface-3);
+  overflow: hidden;
+}
+
+.progress span {
+  display: block;
+  height: 100%;
+  background: var(--accent);
+  transition: width 0.3s;
+}
+
+.failed {
+  margin: 0.5rem 0 0;
+  padding-left: 1rem;
+  font-size: 0.75rem;
+  color: #ffb4ad;
+}
+
+.serverForm {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem 1.75rem;
+}
+
+.saveRow {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border);
+}
+
+.token {
+  max-width: 24rem;
+  margin-bottom: 0.75rem;
+}
+
+@media (max-width: 700px) {
+  .grid,
+  .serverForm {
+    grid-template-columns: 1fr;
+  }
+}

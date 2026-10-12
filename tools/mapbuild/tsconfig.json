@@ -1,5 +1,17 @@
 {
-  "extends": "../../tsconfig.json",
-  "compilerOptions": { "lib": ["ES2023"], "types": ["node"] },
+  "compilerOptions": {
+    "target": "ES2023",
+    "lib": ["ES2023"],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "verbatimModuleSyntax": true,
+    "isolatedModules": true,
+    "resolveJsonModule": true,
+    "allowImportingTsExtensions": true,
+    "noEmit": true,
+    "skipLibCheck": true,
+    "types": ["node"]
+  },
   "include": ["."]
 }

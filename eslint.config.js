@@ -4,17 +4,17 @@ import tseslint from 'typescript-eslint';
 import reactHooks from 'eslint-plugin-react-hooks';
 
 export default tseslint.config(
-  { ignores: ['dist', 'node_modules', 'tools/mapbuild/.cache'] },
+  { ignores: ['**/dist', '**/node_modules', 'tools/mapbuild/.cache', 'backend/data'] },
   js.configs.recommended,
   ...tseslint.configs.recommended,
   {
-    files: ['src/**/*.{ts,tsx}'],
+    files: ['frontend/src/**/*.{ts,tsx}'],
     languageOptions: { globals: globals.browser },
     plugins: { 'react-hooks': reactHooks },
     rules: { 'react-hooks/rules-of-hooks': 'error', 'react-hooks/exhaustive-deps': 'warn' },
   },
   {
-    files: ['tools/**/*.ts', '*.config.{js,ts}'],
+    files: ['backend/**/*.ts', 'tools/**/*.ts', '**/*.config.{js,ts}'],
     languageOptions: { globals: globals.node },
   },
 );

@@ -1,0 +1,120 @@
+.wrap {
+  position: relative;
+  flex: 1 1 20rem;
+  max-width: 34rem;
+  pointer-events: auto;
+}
+
+.icon {
+  position: absolute;
+  left: 0.85rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-faint);
+  font-size: 1.2rem;
+  pointer-events: none;
+}
+
+.input {
+  width: 100%;
+  min-height: var(--touch);
+  padding: 0 2.6rem 0 2.4rem;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: rgba(21, 27, 36, 0.92);
+  backdrop-filter: blur(6px);
+  color: var(--text);
+  font-size: 0.95rem;
+  outline: none;
+}
+
+.input::placeholder {
+  color: var(--text-faint);
+}
+
+.input:focus {
+  border-color: var(--accent);
+}
+
+.input::-webkit-search-cancel-button {
+  display: none;
+}
+
+.kbd {
+  position: absolute;
+  right: 0.7rem;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0 0.4rem;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  color: var(--text-faint);
+  font: 0.75rem/1.4 var(--mono);
+  pointer-events: none;
+}
+
+.input:focus ~ .kbd {
+  display: none;
+}
+
+.list {
+  position: absolute;
+  top: calc(100% + 0.35rem);
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 0.3rem;
+  list-style: none;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+  z-index: 40;
+}
+
+.option {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  padding: 0.5rem 0.7rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.active {
+  background: var(--surface-3);
+}
+
+.name {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.detail {
+  margin-left: auto;
+  flex: none;
+  color: var(--text-faint);
+  font-size: 0.8rem;
+}
+
+.topic {
+  border-top: 1px solid var(--border);
+  border-radius: 0 0 8px 8px;
+  color: var(--accent);
+}
+
+.option:first-child.topic {
+  border-top: 0;
+  border-radius: 8px;
+}
+
+.badge {
+  flex: none;
+  padding: 0.05rem 0.45rem;
+  border-radius: 999px;
+  background: rgba(255, 209, 102, 0.14);
+  font-size: 0.72rem;
+  font-weight: 700;
+}

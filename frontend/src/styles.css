@@ -1,0 +1,133 @@
+@import 'pretendard/dist/web/variable/pretendardvariable-dynamic-subset.css';
+
+:root {
+  --bg: #0d1117;
+  --surface: #151b24;
+  --surface-2: #1c2430;
+  --surface-3: #252f3d;
+  --border: #2c3748;
+  --text: #e6ebf2;
+  --text-dim: #9aa7b8;
+  --text-faint: #6b788a;
+  --accent: #ffd166;
+  --accent-ink: #1a1405;
+  --blue: #5b9bf0;
+  --good: #4cc38a;
+  --warn: #e8b64c;
+  --bad: #f0645b;
+  --radius: 12px;
+  --scale: 1;
+  --touch: 3rem;
+  /* Price moves: Korean convention is red for up, blue for down. */
+  --up: #f0645b;
+  --down: #5b9bf0;
+  --gap: 1rem;
+  --panel-w: min(46vw, 880px);
+  --font: 'Pretendard Variable', Pretendard, system-ui, -apple-system, 'Segoe UI', 'Malgun Gothic', sans-serif;
+  --mono: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: calc(16px * var(--scale));
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font: 1rem/1.5 var(--font);
+  overscroll-behavior: none;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
+
+:root[lang='en'] {
+  --up: #4cc38a;
+  --down: #f0645b;
+}
+
+/* Touch screens: larger targets, no accidental text selection or callouts. Mouse screens keep both. */
+@media (pointer: coarse) {
+  body {
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+  }
+}
+
+@media (pointer: fine) {
+  :root {
+    --touch: 2.5rem;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+[role='dialog']:focus-visible {
+  outline: none;
+}
+
+input,
+textarea,
+select {
+  font: inherit;
+  -webkit-user-select: text;
+  user-select: text;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  touch-action: manipulation;
+}
+
+a {
+  color: var(--blue);
+}
+
+.maplibregl-ctrl-attrib {
+  background: rgba(13, 17, 23, 0.7) !important;
+  color: var(--text-faint);
+  font-size: 0.65rem;
+}
+
+.maplibregl-ctrl-attrib a {
+  color: var(--text-faint);
+}
+
+.maplibregl-canvas-container {
+  touch-action: none;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  50% {
+    opacity: 0.45;
+  }
+}

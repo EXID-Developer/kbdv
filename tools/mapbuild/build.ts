@@ -218,7 +218,7 @@ async function emit(topo: Topology<Layers>, a0: Map<string, Admin0Row>) {
       };
     });
 
-  const webMap = join(root, 'public/map');
+  const webMap = join(root, 'frontend/public/map');
   await mkdir(webMap, { recursive: true });
   const fc = (features: unknown[]) => JSON.stringify({ type: 'FeatureCollection', features });
   await writeFile(join(webMap, 'regions.geojson'), fc(toFeatures(regionGeoms)));

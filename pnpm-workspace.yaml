@@ -1,3 +1,7 @@
+packages:
+  - frontend
+  - backend
+
 allowBuilds:
   better-sqlite3: false
   esbuild: true
